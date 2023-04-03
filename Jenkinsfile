@@ -5,8 +5,7 @@ pipeline {
       agent any
       steps {
         echo 'build stage'
-        sh '''!#/bin/bash
-curl google.com'''
+        sh 'curl google.com'
       }
     }
 
