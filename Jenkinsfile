@@ -4,7 +4,9 @@ pipeline {
     stage('build') {
       steps {
         echo 'build stage'
-        sh 'ping google.com'
+        sh '''#!/bin/bash
+ping google.com
+'''
       }
     }
 
