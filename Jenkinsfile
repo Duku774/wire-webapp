@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'node:latest'
+      image 'node'
     }
 
   }
@@ -9,7 +9,7 @@ pipeline {
     stage('build') {
       agent {
         docker {
-          image 'node:latest'
+          image 'node'
         }
 
       }
