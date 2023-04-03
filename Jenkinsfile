@@ -3,9 +3,10 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        echo 'build stage'
         sh '''#!/bin/bash
-curl google.com'''
+curl google.com
+'''
+        echo 'build stage'
       }
     }
 
