@@ -1,18 +1,8 @@
 pipeline {
-  agent {
-    docker {
-      image 'node'
-    }
-
-  }
+  agent any
   stages {
     stage('build') {
-      agent {
-        docker {
-          image 'node'
-        }
-
-      }
+      agent any
       steps {
         echo 'build stage'
       }
