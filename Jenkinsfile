@@ -6,8 +6,7 @@ pipeline {
         echo 'build stage'
         sh '''#!/bin/bash
 apt-get install -y iputils-ping
-ping google.com
-'''
+ping google.com'''
       }
     }
 
