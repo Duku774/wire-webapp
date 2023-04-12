@@ -13,5 +13,12 @@ pipeline {
       }
     }
 
+    stage('Test') {
+      steps {
+        echo 'test stage'
+        sh 'yarn test'
+      }
+    }
+
   }
 }
