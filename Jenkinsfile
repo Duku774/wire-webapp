@@ -13,10 +13,11 @@ pipeline {
       }
     }
 
-    stage('Test') {
+    stage('Deploy') {
       steps {
-        echo 'test stage'
-        sh 'yarn test'
+        echo 'deploy stage'
+        sh 'yarn build:prod'
+        sh 'cd server && yarn start:prod'
       }
     }
 
