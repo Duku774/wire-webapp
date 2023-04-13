@@ -16,8 +16,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'deploy stage'
-        sh 'yarn build:prod'
-        sh 'cd server && yarn start:prod'
+        sh 'yarn start'
       }
     }
 
