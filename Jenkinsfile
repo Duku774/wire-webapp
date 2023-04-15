@@ -16,7 +16,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'deploy stage'
-        sh 'yarn start'
+        sh 'docker build -f wire-webapp/Dockerfile .'
       }
     }
 
