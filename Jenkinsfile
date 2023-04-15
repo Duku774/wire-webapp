@@ -6,17 +6,10 @@ pipeline {
 
   }
   stages {
-    stage('Build') {
-      steps {
-        echo 'build stage'
-        sh 'yarn'
-      }
-    }
-
     stage('Deploy') {
       steps {
         echo 'deploy stage'
-        sh 'docker ps'
+        sh 'docker'
       }
     }
 
