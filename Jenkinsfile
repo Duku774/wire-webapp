@@ -16,7 +16,7 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'deploy stage'
-        sh 'docker build -f wire-webapp/Dockerfile .'
+        sh 'docker ps'
       }
     }
 
