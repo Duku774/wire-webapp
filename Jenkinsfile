@@ -16,6 +16,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'test stage'
+        sh 'yarn build:prod'
         sh 'tar -czvf Projekt.tar.gz .'
       }
     }
