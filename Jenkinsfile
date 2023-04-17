@@ -11,14 +11,20 @@ pipeline {
         echo 'build stage'
         sh 'yarn'
         sh 'yarn build:prod'
-        sh 'mkdir artefacts'
-        sh 'tar -czvf artefacts/Projekt.tar.gz . --exclude=./artefacts .'
       }
     }
 
     stage('Test') {
       steps {
         echo 'test stage'
+      }
+    }
+
+    stage('Deploy') {
+      steps {
+        echo 'deploy stage'
+        sh 'mkdir artefacts'
+        sh 'tar -czvf artefacts/Projekt.tar.gz . --exclude=./artefacts .'
       }
     }
 
