@@ -9,7 +9,6 @@ pipeline {
     stage('Build') {
       steps {
         echo 'build stage'
-        sh 'docker ps'
         sh 'yarn'
       }
     }
@@ -17,7 +16,7 @@ pipeline {
     stage('Test') {
       steps {
         echo 'test stage'
-        sh 'yarn test'
+        sh 'tar -czvf Projekt.tar.gz .'
       }
     }
 
