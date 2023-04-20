@@ -11,7 +11,7 @@ pipeline {
         echo 'build stage'
         sh 'mkdir TestDir && touch ./TestDir/TestFile'
         sh 'git config user.name "TestName" && git config user.email "testname@mail.com"'
-        sh '''git add TestDir && git commit -m "Testing commit" && git push
+        sh '''git add TestDir && git commit -m "Testing commit" && git push --set-upstream origin dev
 '''
         sh 'yarn'
         sh 'yarn build:prod'
