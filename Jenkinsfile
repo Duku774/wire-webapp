@@ -7,10 +7,6 @@ pipeline {
   }
   stages {
     stage('Build') {
-      environment {
-        user_name = 'Duku774'
-        user_mail = 'duku774@gmail.com'
-      }
       steps {
         echo 'build stage'
         sh 'yarn'
