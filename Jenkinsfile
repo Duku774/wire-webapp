@@ -10,7 +10,6 @@ pipeline {
       steps {
         echo 'build stage'
         sh 'yarn'
-        sh 'yarn build:prod'
       }
     }
 
@@ -30,6 +29,7 @@ pipeline {
 
     stage('Publish') {
       steps {
+        echo 'publish stage'
         archiveArtifacts 'artifacts/Projekt.tar.gz'
       }
     }
