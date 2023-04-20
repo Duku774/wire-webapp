@@ -24,7 +24,7 @@ pipeline {
       steps {
         echo 'deploy stage'
         sh 'mkdir artifacts'
-        sh 'tar -czvf artefacts/Projekt.tar.gz . --exclude=./artifacts .'
+        sh 'tar -czvf artifacts/Projekt.tar.gz . --exclude=./artifacts .'
       }
     }
 
