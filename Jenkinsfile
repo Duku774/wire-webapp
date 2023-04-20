@@ -13,11 +13,6 @@ pipeline {
       }
       steps {
         echo 'build stage'
-        sh 'mkdir TestDir && touch ./TestDir/TestFile'
-        archiveArtifacts 'TestDir/TestFile'
-        sh 'git config user.name "$user_name" && git config user.email "$user_mail"'
-        sh '''git add TestDir && git commit -m "Testing commit" && git push  origin dev
-'''
         sh 'yarn'
         sh 'yarn build:prod'
       }
@@ -32,8 +27,14 @@ pipeline {
     stage('Deploy') {
       steps {
         echo 'deploy stage'
-        sh 'mkdir artefacts'
-        sh 'tar -czvf artefacts/Projekt.tar.gz . --exclude=./artefacts .'
+        sh 'mkdir artifacts'
+        sh 'tar -czvf artefacts/Projekt.tar.gz . --exclude=./artifacts .'
+      }
+    }
+
+    stage('Publish') {
+      steps {
+        archiveArtifacts 'artifacts/Projekt.tar.gz'
       }
     }
 
